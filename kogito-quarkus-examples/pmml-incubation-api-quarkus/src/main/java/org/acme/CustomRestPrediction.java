@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.kie.kogito.incubation.application.AppRoot;
 import org.kie.kogito.incubation.common.DataContext;
+import org.kie.kogito.incubation.common.LocalId;
 import org.kie.kogito.incubation.common.MapDataContext;
 import org.kie.kogito.incubation.predictions.PredictionIds;
 import org.kie.kogito.incubation.predictions.services.PredictionService;
@@ -46,7 +47,7 @@ public class CustomRestPrediction {
     @Produces(MediaType.APPLICATION_JSON)
     public DataContext linearRegression(Map<String, Object> payload) {
         // path: /predictions/Testregression/LinReg
-        var id = appRoot
+        LocalId id = appRoot
                 .get(PredictionIds.class)
                 .get("test_regression.pmml", "LinReg");
 

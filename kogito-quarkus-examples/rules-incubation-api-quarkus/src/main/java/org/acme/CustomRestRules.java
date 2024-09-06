@@ -24,6 +24,7 @@ import java.util.stream.Stream;
 import org.kie.kogito.examples.Hello;
 import org.kie.kogito.incubation.application.AppRoot;
 import org.kie.kogito.incubation.common.DataContext;
+import org.kie.kogito.incubation.common.LocalId;
 import org.kie.kogito.incubation.common.MapDataContext;
 import org.kie.kogito.incubation.rules.RuleUnitIds;
 import org.kie.kogito.incubation.rules.services.RuleUnitService;
@@ -49,7 +50,7 @@ public class CustomRestRules {
     public Stream<String> helloUnit(Map<String, Object> payload) {
         // path: /rule-units/org.kie.kogito.examples.Hello/queries/hello
 
-        var queryId = appRoot.get(RuleUnitIds.class)
+        LocalId queryId = appRoot.get(RuleUnitIds.class)
                 .get(Hello.class)
                 .queries()
                 .get("hello");

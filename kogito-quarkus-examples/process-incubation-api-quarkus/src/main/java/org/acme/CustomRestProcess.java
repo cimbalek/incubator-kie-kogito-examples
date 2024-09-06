@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.kie.kogito.incubation.application.AppRoot;
 import org.kie.kogito.incubation.common.DataContext;
+import org.kie.kogito.incubation.common.LocalId;
 import org.kie.kogito.incubation.common.MapDataContext;
 import org.kie.kogito.incubation.processes.ProcessIds;
 import org.kie.kogito.incubation.processes.services.StraightThroughProcessService;
@@ -47,7 +48,7 @@ public class CustomRestProcess {
     public DataContext customProcessScripts(Map<String, Object> payload) {
         // path: /processes/scripts
 
-        var id = appRoot.get(ProcessIds.class).get("scripts");
+        LocalId id = appRoot.get(ProcessIds.class).get("scripts");
         MapDataContext ctx = MapDataContext.of(payload);
         return svc.evaluate(id, ctx);
     }

@@ -27,7 +27,7 @@
     <parent>
         <groupId>org.kie.kogito.examples</groupId>
         <artifactId>serverless-workflow-custom-function-knative</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>999-SNAPSHOT</version>
     </parent>
     <artifactId>custom-function-knative-service</artifactId>
     <name>Kogito Example :: Serverless Workflow Custom Function Knative :: Service</name>

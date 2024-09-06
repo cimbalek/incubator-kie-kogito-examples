@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.kie.kogito.incubation.application.AppRoot;
 import org.kie.kogito.incubation.common.DataContext;
+import org.kie.kogito.incubation.common.LocalId;
 import org.kie.kogito.incubation.common.MapDataContext;
 import org.kie.kogito.incubation.decisions.DecisionIds;
 import org.kie.kogito.incubation.decisions.services.DecisionService;
@@ -47,7 +48,7 @@ public class CustomRestDecision {
     public DataContext trafficViolation(Map<String, Object> payload) {
         // path: /decisions/https%3A%2F%2Fgithub.com%2Fkiegroup%2Fdrools%2Fkie-dmn%2F_A4BCA8B8-CF08-433F-93B2-A2598F19ECFF/Traffic%20Violation
 
-        var id = appRoot
+        LocalId id = appRoot
                 .get(DecisionIds.class)
                 .get("https://github.com/kiegroup/drools/kie-dmn/_A4BCA8B8-CF08-433F-93B2-A2598F19ECFF",
                         "Traffic Violation");
